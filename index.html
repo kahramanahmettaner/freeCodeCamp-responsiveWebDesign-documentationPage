@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>freeCodeCamp Documentation Page</title>
+</head>
+<body>
+    
+    <nav id="navbar">
+        <header>Python Documentation</header>
+
+        <ul>            
+            <li>
+                <a href="#Introduction" class="nav-link">Introduction</a>
+            </li>
+            <li>
+                <a href="#What_you_should_already_know" class="nav-link">What you should already know</a>
+            </li>
+            <li>
+                <a href="#Hello_world" class="nav-link">Hello world</a>
+            </li>
+            <li>
+                <a href="#Variables" class="nav-link">Variables</a>
+            </li>
+            <li>
+                <a href="#Declaring_variables" class="nav-link">Declaring variables</a>
+            </li>
+            <li>
+                <a href="#Variable_scope" class="nav-link">Variable scope</a>
+            </li>
+            <li>
+                <a href="#Global_variables" class="nav-link">Global variables</a>
+            </li>
+            <li>
+                <a href="#Constants" class="nav-link">Constants</a>
+            </li>
+            <li>
+                <a href="#Data_Types" class="nav-link">Data Types</a>
+            </li>
+            <li>
+                <a href="#Conclusion" class="nav-link">Conclusion</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            
+            <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and many other applications. Python's syntax is designed to be intuitive and its language constructs and object-oriented approach aim to help programmers write clear, logical code.</p>
+            <p>Python comes with a rich standard library that includes modules and packages for a wide variety of tasks, such as file I/O, system calls, and even interfaces to low-level system functionality. Additionally, Python can be extended with numerous third-party libraries to cater to specific needs.</p>
+        </section>
+        
+
+        <section class="main-section" id="What_you_should_already_know">
+            <header>What you should already know</header>
+            <p>This guide assumes you have the following basic background:</p>
+            <ul>
+                <li>
+                    <p>
+                        A general understanding of programming concepts.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Basic knowledge of how to use a command line interface.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Some experience with another programming language is beneficial but not required.
+                    </p>
+                </li>
+            </ul>
+        </section>
+        
+
+        <section class="main-section" id="Hello_world">
+            <header>Hello world</header>
+
+            <p>To get started with writing Python, open your text editor or an integrated development environment (IDE) and write your first "Hello world" Python code:</p>
+            <pre>
+            <code>
+def greet_me(your_name):
+    print("Hello " + your_name)
+
+greet_me("World")
+            </code>
+            </pre>
+            <p>Save the file with a .py extension and run it from your command line or IDE.</p>
+        </section>
+
+
+        <section class="main-section" id="Variables">
+            <header>Variables</header>
+
+            <p>In Python, variables are used to store data that can be referenced and manipulated later in the program. Unlike some programming languages, Python variables do not require explicit declaration before they are assigned a value.</p>
+            <p>A Python variable name must start with a letter or an underscore (_). The rest of the variable name can consist of letters, digits, and underscores. Python is case-sensitive, so variable and Variable would be considered different names.</p>
+            <p>Some examples of legal names are number_hits, temp99, and _name.</p>
+        </section>
+
+
+        <section class="main-section" id="Declaring_variables">
+            <header>Declaring variables</header>
+
+            <p>You declare a variable in Python simply by assigning a value to it:</p>
+            <pre>
+                <code>
+x = 42
+y = 13
+name = "John" 
+                </code>
+            </pre>
+        </section>
+
+
+        <section class="main-section" id="Variable_scope">
+            <header>Variable scope</header>
+
+            <p>In Python, a variable's scope determines where it can be accessed within the code. There are two main types of scope: global scope and local scope.</p>
+            <p>A variable declared outside of any function is called a global variable and is accessible from any part of the code. A variable declared inside a function is called a local variable and is only accessible within that function.</p>
+            <p>Here is an example illustrating variable scope:</p>
+            <pre>
+                <code>
+x = 10  # Global variable
+
+def my_function():
+    y = 5  # Local variable
+    print(y)  # Output: 5
+
+my_function()
+print(x)  # Output: 10
+print(y)  # This will raise a NameError since y is not accessible outside the function
+                </code>
+            </pre>
+        </section>
+
+        
+        <section class="main-section" id="Global_variables">
+            <header>Global variables</header>
+
+            <p>Global variables in Python are defined outside of functions and can be accessed from any part of the code. However, to modify a global variable inside a function, you need to use the global keyword.</p>
+            <p>Here is an example demonstrating the use of global variables:</p>
+            <pre>
+                <code>
+x = 10  # Global variable
+
+def my_function():
+    global x
+    x = 20  # Modifying the global variable
+    print(x)  # Output: 20
+
+my_function()
+print(x)  # Output: 20
+                </code>
+            </pre>
+            <p>Python also allows accessing and modifying global variables across modules using the import statement. This enables the sharing of variables between different parts of a larger program.</p>
+        </section>
+
+
+        <section class="main-section" id="Constants">
+            <header>Constants</header>
+
+            <p>In Python, there is no built-in keyword to create read-only constants as in JavaScript. However, by convention, constants are typically declared and named using all uppercase letters to indicate that they should not be changed. It is important to note that this is a convention and not enforced by the Python interpreter.</p>
+            <pre>
+                <code>
+PI = 3.14
+                </code>
+            </pre>
+            <p>By convention, constants are typically declared at the beginning of a script or module. Python does not enforce the immutability of these constants, so they can technically be reassigned, but it is considered bad practice to do so.</p>
+            <pre>
+                <code>
+# THIS IS A CONSTANT
+PI = 3.14
+
+# It is bad practice to reassign a constant
+PI = 3.15  # This will not raise an error, but it is not recommended
+                </code>
+            </pre>
+            <p>If you want to enforce constant behavior more strictly, you can use classes or modules to encapsulate constant values, though this is not a common practice in Python.</p>
+
+        </section>
+
+        
+        <section class="main-section" id="Data_Types">
+            <header>Data Types</header>
+
+            <p>Python supports several basic data types:</p>
+            <ul>
+                <li>
+                    <p>int. 42</p>
+                </li>
+                <li>
+                    <p>float. 3.14159</p>
+                </li>
+                <li>
+                    <p>complex. 1+2j</p>
+                </li>
+                <li>
+                    <p>str. "Hello"</p>
+                </li>
+                <li>
+                    <p>list. [1, 2, 3]</p>
+                </li>
+                <li>
+                    <p>tuple. (1, 2, 3)</p>
+                </li>
+                <li>
+                    <p>dict. {"key": "value"}</p>
+                </li>
+                <li>
+                    <p>set. {1, 2, 3}</p>
+                </li>
+                <li>
+                    <p>frozenset. frozenset([1, 2, 3])</p>
+                </li>
+                <li>
+                    <p>bool. True or False</p>
+                </li>
+                <li>
+                    <p>NoneType. None</p>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="main-section" id="Conclusion">
+            <header>Conclusion</header>
+
+            <p>Python is a versatile and powerful programming language that is easy to learn and use. With its clear syntax and comprehensive standard library, Python is an excellent choice for both beginners and experienced programmers. Whether you're developing web applications, analyzing data, or automating tasks, Python provides the tools you need to be productive and efficient.</p>
+        </section>
+    </main>
+
+</body>
+</html>
